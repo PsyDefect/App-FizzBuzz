@@ -1,8 +1,10 @@
 use v6;
 use App::FizzBuzz;
 
-sub MAIN(Int :$end = 100, Int :$fizz = 3, Int :$buzz = 5)
+sub MAIN(Int :$end = 100, Int :$fizz = 3, Int :$buzz = 5, Bool :$help)
 {
+    if $help { USAGE() and exit() };
+
     my $app = App::FizzBuzz.new(
         end  => $end,
         fizz => $fizz,
@@ -10,6 +12,8 @@ sub MAIN(Int :$end = 100, Int :$fizz = 3, Int :$buzz = 5)
     );
 
     $app.run;
+
+    return 1; #just because
 }
 
 sub USAGE
@@ -20,6 +24,7 @@ sub USAGE
         perl6 FizzBuzz.p6
 
     Optional:
+        --help           Show this usage info
         --end=[Int]      Specify when to stop
         --fizz=[Int]     Specify on what multiples to say "Fizz"
         --buzz=[Int]     Specify on what multiples to say "Buzz"
