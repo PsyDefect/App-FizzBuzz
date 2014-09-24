@@ -1,0 +1,8 @@
+{
+    "name" : "App::FizzBuzz",
+    "version" : "0.1.0",
+    "description" : "Full CLI FizzBuzz app.",
+    "author" : "John Dexter",
+    "depends" : [ ],
+    "source-url" : "https://github.com/PsyDefect/App-FizzBuzz.git"
+}
