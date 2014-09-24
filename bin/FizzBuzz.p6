@@ -4,11 +4,11 @@ use App::FizzBuzz;
 sub MAIN(Int :$end = 100, Int :$fizz = 3, Int :$buzz = 5)
 {
     my $app = App::FizzBuzz.new(
-        end => $end,
+        end  => $end,
         fizz => $fizz,
         buzz => $buzz
     );
-    
+
     $app.run;
 }
 
