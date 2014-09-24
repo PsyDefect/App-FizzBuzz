@@ -1,10 +1,8 @@
 use v6;
 use App::FizzBuzz;
 
-sub MAIN(Int :$end = 100, Int :$fizz = 3, Int :$buzz = 5, Bool :$help)
+multi sub MAIN( Int :$end = 100, Int :$fizz = 3, Int :$buzz = 5 )
 {
-    if $help { USAGE() and exit() };
-
     my $app = App::FizzBuzz.new(
         end  => $end,
         fizz => $fizz,
@@ -14,6 +12,12 @@ sub MAIN(Int :$end = 100, Int :$fizz = 3, Int :$buzz = 5, Bool :$help)
     $app.run;
 
     return 1; #just because
+}
+
+multi sub MAIN( Bool :$help )
+{
+    USAGE();
+    return 1;
 }
 
 sub USAGE
